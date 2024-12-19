@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
           expiresIn: '8h',
         }
       );
-      res.status(200).json({ token: token, id: super_admin_id });
+      res.status(200).json({ token: token, id: rows[0].super_admin_id });
     } else {
       res.status(400).json({ message: 'Invalid body' });
     }
